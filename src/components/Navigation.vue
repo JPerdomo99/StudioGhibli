@@ -1,5 +1,5 @@
 <template>
-    <div class="navigation mb-8">
+    <div class="navigation mb-3">
         <v-app-bar 
             class="app-bar"
             color="indigo accent-4"
@@ -22,11 +22,22 @@
                 >
                     <v-icon class="text-center">mdi-arrow-right</v-icon>
                 </v-btn>
+                
         </v-app-bar>
+        <v-img v-if="logo === true"
+            :src="require('@/assets/Images/logo/studio-ghibli-logo.svg')"
+        ></v-img>
+        <v-img v-else
+            class="logoMin"
+            :src="require('@/assets/Images/logo/studio-ghibli-logo.svg')"
+            width="180px"
+        ></v-img>
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'Navigation',
     data() {
@@ -41,6 +52,9 @@ export default {
         next() {
             this.$router.go(1);
         }
+    },
+    computed: {
+        ...mapState(['logo'])
     }
 }
 </script>
@@ -53,7 +67,7 @@ export default {
         width: 136px;
         height: 40px !important;
     }
-    .navigation{
-        justify-content: end;
+    .logoMin{
+        margin-left: 136px;
     }
 </style>

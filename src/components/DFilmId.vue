@@ -21,6 +21,7 @@
 
 <script>
 import Axios from "axios";
+import { mapActions } from 'vuex';
 
 export default {
     data() {
@@ -55,16 +56,17 @@ export default {
         },
         showx(){
             this.expand = !this.expand;
-        }
+        },
+        ...mapActions(['getLogoMin'])
     },
     computed: {
-        
     },
     created(){
         this.getFilmId();
     },
     mounted(){
         this.expand = true;
+        this.getLogoMin();
     }
 }
 </script>

@@ -5,15 +5,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    certFresh: '@/assets/Images/Rt/RottenFresh.png',
-    fresh: '@/assets/Images/Rt/30px-Rotten_Tomatoes.svg.png',
-    rotten: '@/assets/Images/Rt/30px-Rotten_Tomatoes_rotten.svg.png'
+    logo: true
   },
   mutations: {
+    getLogo(state, accion) {
+      state.logo = accion
+    },
+    getLogoId(state, accion) {
+      state.logo = accion
+    }
   },
   actions: {
-    getImage(state) {
-      
+    getLogoMax( { commit } ) {
+      commit('getLogo', true)
+    },
+    getLogoMin( { commit } ) {
+      commit('getLogoId', false)
     }
   },
   modules: {

@@ -33,7 +33,8 @@
 </template>
 
 <script>
-import Axios from "axios";
+import Axios from "axios"; 
+import { mapActions } from 'vuex';
 
 export default {
     data() {
@@ -71,15 +72,16 @@ export default {
             }else{
                 return this.rotten;
             }
-        }
+        },
+        ...mapActions(['getLogoMax'])
     },
     computed: {
-        /*rt(){
-            return this.rt = validateRt();
-        }*/
     },
     created() {
         this.getFilms();
+    },
+    mounted() {
+        this.getLogoMax();
     }
 }
 </script>
