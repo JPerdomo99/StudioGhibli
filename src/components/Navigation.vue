@@ -22,7 +22,6 @@
                 >
                     <v-icon class="text-center">mdi-arrow-right</v-icon>
                 </v-btn>
-                
         </v-app-bar>
         <v-img v-if="logo === true"
             :src="require('@/assets/Images/logo/studio-ghibli-logo.svg')"
